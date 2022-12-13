@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -21,7 +22,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/ivHeaderApp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:scaleType="centerCrop"
@@ -32,35 +33,35 @@
                     app:srcCompat="@drawable/top_background" />
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/ivCircle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivHeaderApp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/imageView"
+                    app:layout_constraintTop_toTopOf="@+id/ivHeaderApp"
                     app:layout_constraintVertical_bias="0.3"
                     app:srcCompat="@drawable/circle" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/tvAppName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="App Name"
+                    android:text="@string/app_name"
                     android:textColor="#ffffff"
                     android:textSize="21sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView2"
-                    app:layout_constraintStart_toStartOf="@+id/imageView2"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    app:layout_constraintEnd_toEndOf="@+id/ivCircle"
+                    app:layout_constraintStart_toStartOf="@+id/ivCircle"
+                    app:layout_constraintTop_toBottomOf="@+id/ivCircle" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/tvSignUp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sign up"
+                android:text="@string/sign_up"
                 android:textAlignment="center"
                 android:textColor="#581f5f"
                 android:textSize="40sp"
@@ -81,21 +82,21 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/tvFirstName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="First Name"
+                        android:text="@string/first_name"
                         android:textColor="#581f5f"
                         android:textSize="18sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName"
+                        android:id="@+id/etFirstName"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_marginTop="8dp"
                         android:background="@drawable/edittext_background"
                         android:ems="10"
-                        android:hint="Your first name"
+                        android:hint="@string/your_first_name"
                         android:inputType="textPersonName"
                         android:padding="8dp"
                         android:textAlignment="center"
@@ -113,21 +114,21 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/tvLastName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Last Name"
+                        android:text="@string/last_name"
                         android:textColor="#581f5f"
                         android:textSize="18sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName"
+                        android:id="@+id/etLastName"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_marginTop="8dp"
                         android:background="@drawable/edittext_background"
                         android:ems="10"
-                        android:hint="Your last name"
+                        android:hint="@string/your_last_name"
                         android:inputType="textPersonName"
                         android:padding="8dp"
                         android:textAlignment="center"
@@ -145,21 +146,21 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/tvUserName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="User Name"
+                    android:text="@string/username"
                     android:textColor="#581f5f"
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName"
+                    android:id="@+id/etUserName"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/edittext_background"
                     android:ems="10"
-                    android:hint="Enter your user name"
+                    android:hint="@string/enter_your_username"
                     android:inputType="textPersonName"
                     android:padding="8dp"
                     android:textAlignment="center"
@@ -176,21 +177,21 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/tvPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Password"
+                    android:text="@string/password"
                     android:textColor="#581f5f"
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPassword"
+                    android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/edittext_background"
                     android:ems="10"
-                    android:hint="Enter your password"
+                    android:hint="@string/enter_your_password"
                     android:inputType="textPersonName"
                     android:padding="8dp"
                     android:textAlignment="center"
@@ -208,21 +209,21 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/tvDateOfBirth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Date of Birth"
+                    android:text="@string/date_of_birth"
                     android:textColor="#581f5f"
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPassword"
+                    android:id="@+id/etDateOfBirth"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/edittext_background"
                     android:ems="10"
-                    android:hint="Enter your date of birth"
+                    android:hint="@string/enter_your_date_of_birth"
                     android:inputType="textPersonName"
                     android:padding="8dp"
                     android:textAlignment="center"
@@ -231,24 +232,24 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btnSignUp"
                 style="@android:style/Widget.Button"
                 android:layout_width="200dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/button_background"
-                android:text="Sing up"
+                android:text="@string/sign_up"
                 android:textColor="#ffffff"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/tvAllreadyHaveOnAccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Allready have an account? Login"
+                android:text="@string/allready_have_an_account_login"
                 android:textAlignment="center"
                 android:textColor="#000000" />
         </LinearLayout>
