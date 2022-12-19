@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ededf7">
+    android:background="#ededf7"
+    tools:context=".ui.LoginActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -57,84 +58,14 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/tvSignUp"
+                android:id="@+id/tvLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/sign_up"
+                android:text="@string/login"
                 android:textAlignment="center"
                 android:textColor="#581f5f"
                 android:textSize="40sp"
                 android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_weight="0.5"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tvFirstName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/first_name"
-                        android:textColor="#581f5f"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/etFirstName"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/edittext_background"
-                        android:ems="10"
-                        android:hint="@string/your_first_name"
-                        android:inputType="textPersonName"
-                        android:padding="8dp"
-                        android:textAlignment="center"
-                        android:textColor="#717171"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="32dp"
-                    android:layout_weight="0.5"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tvLastName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/last_name"
-                        android:textColor="#581f5f"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/etLastName"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/edittext_background"
-                        android:ems="10"
-                        android:hint="@string/your_last_name"
-                        android:inputType="textPersonName"
-                        android:padding="8dp"
-                        android:textAlignment="center"
-                        android:textColor="#717171"
-                        android:textSize="16sp" />
-                </LinearLayout>
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -156,15 +87,15 @@
                     android:id="@+id/etUserName"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/edittext_background"
                     android:ems="10"
                     android:hint="@string/enter_your_username"
+                    android:background="@drawable/edittext_background"
                     android:inputType="textPersonName"
-                    android:padding="8dp"
-                    android:textAlignment="center"
+                    android:textSize="16sp"
                     android:textColor="#717171"
-                    android:textSize="16sp" />
+                    android:textAlignment="center"
+                    android:padding="8dp"
+                    android:layout_marginTop="8dp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -196,61 +127,95 @@
                     android:textAlignment="center"
                     android:textColor="#717171"
                     android:textSize="16sp" />
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1">
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="#707070" />
+
+                <TextView
+                    android:id="@+id/tvOr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="@string/or"
+                    android:textSize="16sp" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="#707070" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvDateOfBirth"
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/ivGoogle"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/date_of_birth"
-                    android:textColor="#581f5f"
-                    android:textSize="18sp" />
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/google" />
 
-                <EditText
-                    android:id="@+id/etDateOfBirth"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/edittext_background"
-                    android:ems="10"
-                    android:hint="@string/enter_your_date_of_birth"
-                    android:inputType="textPersonName"
-                    android:padding="8dp"
-                    android:textAlignment="center"
-                    android:textColor="#717171"
-                    android:textSize="16sp" />
+                <ImageView
+                    android:id="@+id/ivTwitter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/twitter" />
+
+                <ImageView
+                    android:id="@+id/ivFacebook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/facebook" />
+
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/tvDontHaveAnAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/don_t_have_an_account_signup"
+                android:textAlignment="center"
+                android:layout_marginTop="32dp"
+                android:textColor="#000000"/>
+
             <Button
-                android:id="@+id/btnSignUp"
+                android:id="@+id/btnLogin"
                 style="@android:style/Widget.Button"
                 android:layout_width="200dp"
                 android:layout_height="55dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="32dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="32dp"
                 android:background="@drawable/button_background"
-                android:text="@string/sign_up"
+                android:text="@string/login"
                 android:textColor="#ffffff"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvAllreadyHaveOnAccount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/allready_have_an_account_login"
-                android:textAlignment="center"
-                android:textColor="#000000" />
         </LinearLayout>
     </ScrollView>
 

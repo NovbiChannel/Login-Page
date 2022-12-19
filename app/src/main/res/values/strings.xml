@@ -6,7 +6,7 @@
     <string name="password">Password</string>
     <string name="enter_your_password">Enter your password</string>
     <string name="or">OR</string>
-    <string name="don_t_have_an_account_signup">Don\'t have an account?</string>
+    <string name="don_t_have_an_account_signup">Don\'t have an account? <font color="#581f5f"><b>SignUp</b></font></string>
     <string name="sign_up">Sign up</string>
     <string name="first_name">First Name</string>
     <string name="your_first_name">Your first name</string>
@@ -14,7 +14,7 @@
     <string name="your_last_name">Your last name</string>
     <string name="date_of_birth">Date of Birth</string>
     <string name="enter_your_date_of_birth">Enter your date of birth</string>
-    <string name="allready_have_an_account_login">Allready have an account? Login</string>
+    <string name="allready_have_an_account_login">Already have an account? <font color="#581f5f"><b>Login</b></font></string>
     <string name="good_morning_nikita">Good morning Nikita</string>
     <string name="until">Until</string>
     <string name="_20_april_30_may">20 April - 30 May</string>

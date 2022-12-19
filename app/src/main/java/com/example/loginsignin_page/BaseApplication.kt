@@ -1,14 +1,8 @@
 package com.example.loginsignin_page
 
 import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
-import timber.log.Timber
+import com.example.loginsignin_page.db.UserDatabase
 
-@HiltAndroidApp
 class BaseApplication: Application() {
-
-    override fun onCreate() {
-        super.onCreate()
-        Timber.plant(Timber.DebugTree())
-    }
+    val db: UserDatabase by lazy { UserDatabase.getDatabase(this) }
 }
