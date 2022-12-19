@@ -1,22 +1,19 @@
 package com.example.loginsignin_page.ui
 
 import android.annotation.SuppressLint
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.viewModels
-import androidx.lifecycle.lifecycleScope
-import com.example.loginsignin_page.BaseApplication
+import androidx.annotation.RequiresApi
 import com.example.loginsignin_page.databinding.ActivityMenuBinding
 import com.example.loginsignin_page.other.Constants.USER_FIRST_NAME
-import com.example.loginsignin_page.ui.viewmodels.MainViewModel
-import com.example.loginsignin_page.ui.viewmodels.MainViewModelFactory
-import kotlinx.coroutines.launch
+import java.time.LocalTime
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMenuBinding
 
+    @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +21,30 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val userFirstName = intent.getStringExtra(USER_FIRST_NAME)
+        val time = LocalTime.now()
 
-        binding.tvHelloUser.text = "Hello $userFirstName"
+        for (i in 0..5) {
+            if (i == time.hour) {
+                binding.tvHelloUser.text = "Goodnight, $userFirstName"
+            }
+        }
+
+        for (i in 6..10) {
+            if (i == time.hour) {
+                binding.tvHelloUser.text = "Good morning, $userFirstName"
+            }
+        }
+
+        for (i in 11..17) {
+            if (i == time.hour) {
+                binding.tvHelloUser.text = "Good afternoon, $userFirstName"
+            }
+        }
+
+        for (i in 18..23) {
+            if (i == time.hour) {
+                binding.tvHelloUser.text = "Good evening, $userFirstName"
+            }
+        }
     }
 }

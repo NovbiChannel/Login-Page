@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Login&amp;SignIn_page</string>
+    <string name="app_name">Your App Name</string>
     <string name="login">Login</string>
     <string name="username">UserName</string>
     <string name="enter_your_username">Enter your username</string>
