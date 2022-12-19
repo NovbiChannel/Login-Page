@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ededf7"
-    tools:context=".MainActivity">
+    tools:context=".ui.LoginActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -122,7 +122,7 @@
                     android:background="@drawable/edittext_background"
                     android:ems="10"
                     android:hint="@string/enter_your_password"
-                    android:inputType="textPersonName"
+                    android:inputType="textPassword"
                     android:padding="8dp"
                     android:textAlignment="center"
                     android:textColor="#717171"
