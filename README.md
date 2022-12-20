@@ -1,4 +1,4 @@
-# SignIn and Login App
+# Sign Up and Login App
 <p>A simple application for a better understanding of how the user authorization and registration block works. What solutions and libraries will I have to work with. This application has greatly improved my new knowledge of libraries.</p>
 <p>
 <img src="https://firebasestorage.googleapis.com/v0/b/spotifyclonetest-68b4a.appspot.com/o/image_for_project%2FSignIn%26Login_App%2FScreenshot_20221220_171903.png?alt=media&token=b62e5674-c0f6-484a-b22d-069022a2a792" alt="SignIn Activity" width="33%">
