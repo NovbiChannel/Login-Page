@@ -3,12 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/menu_background"
     tools:context=".ui.MainActivity">
 
     <ScrollView
+        android:id="@+id/scroll_View"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,45 +19,67 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/user_main_menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/user_information"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:minHeight="194dp"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/ivUserPhoto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="48dp"
                     android:layout_marginEnd="32dp"
                     android:layout_marginBottom="48dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    app:civ_border_color="#ffffff"
+                    app:civ_border_width="3dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/profile" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tvHelloUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="@string/good_morning_nikita"
                     android:textColor="#ffffff"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/ivUserPhoto"
                     app:layout_constraintEnd_toStartOf="@+id/ivUserPhoto"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/ivUserPhoto" />
+                    app:layout_constraintTop_toTopOf="@+id/ivUserPhoto"
+                    tools:text="@string/good_morning_nikita" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="647dp"
+                android:layout_height="0dp"
+                android:minHeight="700dp"
                 android:background="@drawable/bottom_background"
-                android:orientation="vertical">
+                android:gravity="bottom"
+                android:orientation="vertical"
+                android:visibility="visible"
+                android:layout_weight="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/user_information">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -67,6 +91,7 @@
                         android:id="@+id/ivWhiteCircle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:contentDescription="@string/grey_circle"
                         android:scaleType="fitXY"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -78,6 +103,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
+                        android:contentDescription="@string/man_with_laptop_sitting_on_books"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -138,6 +164,7 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginEnd="32dp"
                     android:layout_marginBottom="32dp"
+                    android:autofillHints=""
                     android:background="@drawable/search_edit_background"
                     android:drawableEnd="@drawable/search_icon"
                     android:elevation="3dp"
@@ -147,6 +174,7 @@
                     android:inputType="textPersonName"
                     android:padding="8dp"
                     android:textColor="#8d8d8d"
+                    android:textColorHint="#78909C"
                     android:textSize="16sp"
                     android:textStyle="bold|italic" />
 
@@ -169,6 +197,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:baselineAligned="false"
                         android:orientation="horizontal">
 
                         <LinearLayout
@@ -186,16 +215,19 @@
                                     android:id="@+id/ivInboxCircle"
                                     android:layout_width="70dp"
                                     android:layout_height="70dp"
+                                    android:contentDescription="@string/pinck_circle"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/circle_menu" />
+                                    app:srcCompat="@drawable/circle_menu"
+                                    tools:ignore="ImageContrastCheck" />
 
                                 <ImageView
                                     android:id="@+id/ivInbox"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:contentDescription="@string/inbox"
                                     app:layout_constraintBottom_toBottomOf="@+id/ivInboxCircle"
                                     app:layout_constraintEnd_toEndOf="@+id/ivInboxCircle"
                                     app:layout_constraintStart_toStartOf="@+id/ivInboxCircle"
@@ -229,6 +261,7 @@
                                     android:id="@+id/ivMapsCircle"
                                     android:layout_width="70dp"
                                     android:layout_height="70dp"
+                                    android:contentDescription="@string/pinck_circle"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
@@ -239,6 +272,7 @@
                                     android:id="@+id/ivMaps"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:contentDescription="@string/maps"
                                     app:layout_constraintBottom_toBottomOf="@+id/ivMapsCircle"
                                     app:layout_constraintEnd_toEndOf="@+id/ivMapsCircle"
                                     app:layout_constraintStart_toStartOf="@+id/ivMapsCircle"
@@ -272,16 +306,19 @@
                                     android:id="@+id/ivChatsCircle"
                                     android:layout_width="70dp"
                                     android:layout_height="70dp"
+                                    android:contentDescription="@string/pinck_circle"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/circle_menu" />
+                                    app:srcCompat="@drawable/circle_menu"
+                                    tools:ignore="ImageContrastCheck" />
 
                                 <ImageView
                                     android:id="@+id/ivChats"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:contentDescription="@string/chats"
                                     app:layout_constraintBottom_toBottomOf="@+id/ivChatsCircle"
                                     app:layout_constraintEnd_toEndOf="@+id/ivChatsCircle"
                                     app:layout_constraintStart_toStartOf="@+id/ivChatsCircle"
@@ -315,16 +352,19 @@
                                     android:id="@+id/ivReportsCircle"
                                     android:layout_width="70dp"
                                     android:layout_height="70dp"
+                                    android:contentDescription="@string/pinck_circle"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/circle_menu" />
+                                    app:srcCompat="@drawable/circle_menu"
+                                    tools:ignore="ImageContrastCheck" />
 
                                 <ImageView
                                     android:id="@+id/ivReports"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:contentDescription="@string/report"
                                     app:layout_constraintBottom_toBottomOf="@+id/ivReportsCircle"
                                     app:layout_constraintEnd_toEndOf="@+id/ivReportsCircle"
                                     app:layout_constraintStart_toStartOf="@+id/ivReportsCircle"
@@ -347,6 +387,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:baselineAligned="false"
                         android:orientation="horizontal"
                         tools:layout_marginTop="32dp">
 
@@ -365,16 +406,19 @@
                                     android:id="@+id/ivCalendarCircle"
                                     android:layout_width="70dp"
                                     android:layout_height="70dp"
+                                    android:contentDescription="@string/pinck_circle"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/circle_menu" />
+                                    app:srcCompat="@drawable/circle_menu"
+                                    tools:ignore="ImageContrastCheck" />
 
                                 <ImageView
                                     android:id="@+id/ivCalendar"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:contentDescription="@string/calendar"
                                     app:layout_constraintBottom_toBottomOf="@+id/ivCalendarCircle"
                                     app:layout_constraintEnd_toEndOf="@+id/ivCalendarCircle"
                                     app:layout_constraintStart_toStartOf="@+id/ivCalendarCircle"
@@ -408,16 +452,19 @@
                                     android:id="@+id/ivTipCircle"
                                     android:layout_width="70dp"
                                     android:layout_height="70dp"
+                                    android:contentDescription="@string/pinck_circle"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/circle_menu" />
+                                    app:srcCompat="@drawable/circle_menu"
+                                    tools:ignore="ImageContrastCheck" />
 
                                 <ImageView
                                     android:id="@+id/ivTip"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:contentDescription="@string/tip"
                                     app:layout_constraintBottom_toBottomOf="@+id/ivTipCircle"
                                     app:layout_constraintEnd_toEndOf="@+id/ivTipCircle"
                                     app:layout_constraintStart_toStartOf="@+id/ivTipCircle"
@@ -451,6 +498,7 @@
                                     android:id="@+id/ivSettingCircle"
                                     android:layout_width="70dp"
                                     android:layout_height="70dp"
+                                    android:contentDescription="@string/pinck_circle"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
@@ -461,6 +509,7 @@
                                     android:id="@+id/ivSetting"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:contentDescription="@string/settings"
                                     app:layout_constraintBottom_toBottomOf="@+id/ivSettingCircle"
                                     app:layout_constraintEnd_toEndOf="@+id/ivSettingCircle"
                                     app:layout_constraintStart_toStartOf="@+id/ivSettingCircle"
@@ -494,6 +543,7 @@
                                     android:id="@+id/ivMoreCircle"
                                     android:layout_width="70dp"
                                     android:layout_height="70dp"
+                                    android:contentDescription="@string/pinck_circle"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
@@ -504,6 +554,7 @@
                                     android:id="@+id/ivMore"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:contentDescription="@string/more"
                                     app:layout_constraintBottom_toBottomOf="@+id/ivMoreCircle"
                                     app:layout_constraintEnd_toEndOf="@+id/ivMoreCircle"
                                     app:layout_constraintStart_toStartOf="@+id/ivMoreCircle"
